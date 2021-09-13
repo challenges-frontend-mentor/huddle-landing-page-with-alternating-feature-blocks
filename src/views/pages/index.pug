@@ -1,0 +1,23 @@
+include ../mixins/article
+
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        link(rel="stylesheet", href="css/style.css")
+        <script src="https://kit.fontawesome.com/c3cdf48903.js" crossorigin="anonymous"></script>
+        title Landing Pages
+    body 
+        include ../block/header
+        main.main 
+            +article("Grow Together","Generate meaningful discussions with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feedback form.","assets/images/illustration-grow-together.svg")
+            +article("Flowing Conversations","You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.","assets/images/illustration-flowing-conversation.svg")
+            +article("Your Users","It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed in to your app, your users can start chatting immediately.","assets/images/illustration-your-users.svg")
+            include ../block/aside
+            include ../block/footer

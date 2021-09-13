@@ -1,0 +1,51 @@
+@use "../config/variables" as *;
+@use "../mixins/desktop" as *;
+@use "../mixins/to-desktop" as *;
+
+*{
+    box-sizing: border-box;
+}
+
+body,
+h1, h2, h3,
+ul,
+p {
+  margin: 0;
+}
+
+h1, h2, h3{
+    color: var(--Very-Dark-Cyan);
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    color:var(--Grayish-Blue);
+    font-weight:400;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+body{
+    display: grid;
+    // font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+img{
+    width:100%;
+}
+
+a{
+    text-decoration: none;
+      color: var(--white);
+    
+}
+
+main{
+    padding: 20px;
+}

@@ -1,0 +1,41 @@
+.header{
+    background-color:var(--Very-Pale-Cyan);
+    background-image: url(../assets/images/bg-hero-mobile.svg);
+    padding: 25px 15px 20px ;
+    text-align: center;
+    margin-bottom: 50px;
+
+    &__top-bar{
+        display:flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+
+        & img{
+            width:100px;
+            align-self: flex-start;
+        }
+    }
+
+    &__info{
+        padding-left:20px ;
+        padding-right: 20px;
+        margin-bottom: 60px;
+    }
+    
+    &__title{
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 25px;
+    }
+    
+    &__text{
+        color: var(--Very-Dark-Cyan);
+        font-size: 1rem;
+        font-weight: lighter;
+        margin-bottom: 30px;
+    }
+
+    &__img{
+        width: 310px;
+    }
+}
