@@ -1,21 +1,50 @@
+@use "../mixins/desktop" as *;
+@use "../mixins/to-desktop" as *;
+
 .article{
     display: flex;
-    flex-direction: column;
     box-shadow: 0px 0px 15px -8px var(--Grayish-Blue);
     border-radius: 12px;
     justify-content: center;
     margin-bottom:40px;
     background-color: var(--white);
 
+    @include desktop {
+        max-width: 1230px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 120px;
+        padding-right: 35px;
+    }
+    
+    @include to-desktop {
+        flex-direction: column;
+
+    }
+
     &__info{
-        order: 1;
         text-align: center;
-        margin-bottom: 30px;
+        
+        @include to-desktop {
+            order: 1;
+            margin-bottom: 30px;
+        }
+
+        @include desktop {
+            align-self: center;
+        }
+        
     }
 
     &__title{
         font-size: 1.3rem;
         text-align: center;
+        
+        @include desktop {
+            text-align: left;
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+        }
 
         &-aside{
             margin-top: 30px;
@@ -28,12 +57,25 @@
         font-size: 1.1rem;
         margin-left: auto;
         margin-right: auto;
+
+        @include desktop {
+            font-size: 2rem;
+        }
     }
 
     &__text{
         font-size: .9rem;
         font-weight: 400;
-        padding: 15px 40px;
+        
+        @include to-desktop{
+            padding: 15px 40px;
+        }
+
+        @include desktop {
+            text-align: left;
+            font-size: 1.1rem;
+            padding-right: 150px;
+        }
     }
 
     & img{
@@ -41,9 +83,11 @@
         margin-right: auto;
         margin-bottom:50px;
         margin-top:50px;
-        // flex-basis: 100px;
         width: 240px;
-        // text-align: center;
+
+        @include desktop {
+            width: 420px;
+        }
     }
 }
 
@@ -52,5 +96,27 @@
     top: 100px;
     margin-left: -7px;
     margin-right: -7px;
-    // background-color: red;
+    
+    @include desktop {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+        padding: 0;
+        top: 130px;
+        padding-top: 40px;
+        padding-bottom: 15px;
+    }
+}
+
+@include desktop {
+
+    .article:nth-of-type(2) .article__info{
+        order: 1;
+        margin-left: 170px;
+    }
+    
+    .article:nth-of-type(2) .article__info .article__text{
+        padding-right: 0;
+    }
 }

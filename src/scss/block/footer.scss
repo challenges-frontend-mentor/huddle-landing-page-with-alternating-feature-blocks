@@ -1,3 +1,6 @@
+@use "../mixins/desktop" as *;
+@use "../mixins/to-desktop" as *;
+
 .footer{
     background-color:var(--Very-Dark-Cyan);
     margin-left: -20px;
@@ -6,61 +9,104 @@
     margin-top: 1px;
     padding-left: 18px;
     margin-bottom: -20px;
-    
-    &  img{
-        width: 170px;
+
+    @include desktop {
+        display:grid;
+        grid-template-columns: 510px 475px 240px;
+        justify-content: center;
+        grid-template-rows: 80px 100px 50px 50px 100px;
+        align-items: start;
+        padding-top: 180px;
     }
     
-    
+    & > img{
+        width: 170px;
+
+        @include desktop {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            width: 240px;
+        }
+    }
     
     &__data{
         display: flex;
         align-content: flex-start;
         justify-content: flex-start;
-        margin-top: 25px;
+        
+        @include to-desktop {
+            margin-top: 25px;
+        }
+
+        @include desktop {
+            width: 400px;
+        }
     }
     
     &__data:nth-of-type(1) img{
         margin-right: 8px;
         align-self: start;
         margin-top: 5px;
+        // background-color:red;
         
     }
+
+    @include desktop {
+
+        &__data:nth-of-type(2){
+            grid-row-start: 3;
+        }
+    
+        &__data:nth-of-type(3){
+            grid-row-start: 4;
+        }
+    }
+
     
     &__data img{
         flex-basis: 20px;
         align-self: center;
-        // margin-right: 20px;
-        // width: 1px;
     }
     
     &__text{
         text-align: left;
-        // flex-basis: 300px;
         margin-left: 15px;
         color: var(--white);
         font-size: 16px;
-        
     }
     
 
    &__list{
-        margin-top:60px;
-        margin-bottom:40px;
+       
+       @include to-desktop {
+           margin-top:60px;
+           margin-bottom:40px;
+        }
+
+        @include desktop {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-auto-flow: column;
+            grid-column-start: 2 ;
+            grid-row-start: 2;
+        }
+
     &__item{
         padding-bottom: 20px;
-
     }
    }
 
    &__social__list{
        display: flex;
-       justify-content: center;
        margin-bottom:15px;
+       
+       @include to-desktop {
+           justify-content: center;
+
+       }
        
        &:nth-child(2){
            padding-left: 50px;
-           background-color: red;
         }
         
         &__item{
@@ -75,32 +121,29 @@
         }
         
         &__item:nth-of-type(2){
-            // border: 2px solid red;
             margin-left: 12px;
             margin-right: 12px;
-        //    padding-left: 30px;
-
        }
-
-    //    &__link{
-    //        display: flex;
-    //        justify-content: center;
-    //        align-content: center;
-    //    }
    }
-
-   
 }
 
 .copy{
     display: block;
     color: var(--white);
-    // font-family: 'Poppins', sans-serif;
     font-weight: lighter;
     font-size: 11px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     padding-bottom: 50px;
+    
+    @include to-desktop {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    
+    @include desktop {
+        grid-column-start:3 ;
+        grid-row-start: 5;
+    }
 
 }
